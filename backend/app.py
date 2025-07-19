@@ -34,7 +34,7 @@ def ask():
         answer = response.choices[0].message.content.strip()
         return jsonify({"response": answer})
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"error": 'Eddinakudaka API Key expire ipoindhi.'}), 500
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
