@@ -5,11 +5,13 @@ const ChatBox = () => {
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const BASE_URL = process.env.REACT_APP_API_URL;
+
   const handleAsk = async () => {
     setLoading(true);
     setResponse("");
     try {
-      const res = await fetch("http://localhost:5000/ask", {
+      const res = await fetch(BASE_URL + "/ask", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
