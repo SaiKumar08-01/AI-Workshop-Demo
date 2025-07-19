@@ -12,6 +12,10 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def home():
+    return "Hello from Flask!"
+
 @app.route("/ask", methods=["POST"])
 def ask():
     data = request.get_json()
